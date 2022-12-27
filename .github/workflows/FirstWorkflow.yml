@@ -1,16 +1,17 @@
-name: FirstWorkFlow
+name: Super-Linter
+
 on: push
+
 jobs:
   super-lint:
-    name: Lint Code Base
+    name: Lint code base
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Run Super-Linter
-        uses: github/super-linter@v3.17.0
+        uses: github/super-linter@v3
         env:
-          DEFAULTBRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
-      
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
